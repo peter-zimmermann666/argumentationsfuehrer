@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Argumentationsführer</title>
-<meta name="description" content="Glossar von Fehlschlüssen und starken, nicht-zwingenden Argumentationsformen für die Beurteilung von Erörterungsaufsätzen.">
+<meta name="description" content="Glossar von 32 Fehlschlüssen und starken, nicht-zwingenden Argumentationsformen.">
 <meta name="theme-color" content="#3e5c43">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -83,14 +83,15 @@
   .spine{
     background:var(--surface); border-right:1px solid var(--line); padding:22px 18px 24px;
     display:flex; flex-direction:column; gap:20px; position:sticky; top:0; height:100vh; overflow-y:auto;
+    min-width:0; box-sizing:border-box;
   }
-  .brand{ display:flex; align-items:flex-start; gap:10px; }
+  .brand{ display:flex; align-items:flex-start; gap:10px; min-width:0; }
   .brand-mark{
     width:34px; height:34px; flex:none; border-radius:50%; border:1.5px solid var(--accent);
     display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:.7rem; color:var(--accent-strong);
   }
-  .brand-text{ font-family:var(--font-display); }
-  .brand-text .title{ font-size:1.05rem; font-weight:700; line-height:1.2; }
+  .brand-text{ font-family:var(--font-display); min-width:0; }
+  .brand-text .title{ font-size:1.05rem; font-weight:700; line-height:1.2; overflow-wrap:break-word; }
   .brand-text .subtitle{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
 
   .offline-badge{
@@ -110,12 +111,12 @@
   .count-line{ font-family:var(--font-mono); font-size:.7rem; color:var(--ink-soft); }
   .reset-link{ background:none; border:none; padding:0; font-size:.78rem; color:var(--accent-strong); text-decoration:underline; text-underline-offset:2px; align-self:flex-start; }
 
-  .main{ padding:28px clamp(16px,4vw,40px) 48px; max-width:1180px; }
+  .main{ padding:28px clamp(16px,4vw,40px) 48px; max-width:1180px; min-width:0; }
   [hidden]{ display:none !important; }
 
   .page-head{ display:flex; flex-direction:column; gap:6px; margin-bottom:22px; }
   .eyebrow{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-strong); }
-  .page-head h1{ font-family:var(--font-display); font-size:1.7rem; }
+  .page-head h1{ font-family:var(--font-display); font-size:1.7rem; overflow-wrap:break-word; }
   .page-head p{ color:var(--ink-soft); font-size:.95rem; margin:0; }
 
   .mobile-tools{ display:none; }
@@ -157,7 +158,7 @@
     <div class="brand">
       <div class="brand-mark" aria-hidden="true">AF</div>
       <div class="brand-text">
-        <div class="title">Argumentationsführer</div>
+        <div class="title">Argu-führer</div>
         <div class="subtitle">Fehlschlüsse &amp; starke Argumente</div>
       </div>
     </div>
@@ -176,7 +177,7 @@
   <main class="main">
     <div class="page-head">
       <span class="eyebrow">Glossar</span>
-      <h1>Argumentationsformen für die Aufsatzbeurteilung</h1>
+      <h1>Argumentationsformen</h1>
       <p>32 Einträge, geordnet nach Familie: Fehlschlüsse mit Erkennungsmerkmal, Beispiel und Verwechslungsgefahr – sowie starke, nicht-zwingende Argumente, die ihnen zum Verwechseln ähnlich sehen können, es aber sauber gemacht richtig machen. Beispiele orientieren sich an gängigen Erörterungsthemen.</p>
     </div>
 

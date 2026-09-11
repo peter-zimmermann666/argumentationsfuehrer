@@ -1,7 +1,7 @@
 {
   "name": "Argumentationsführer",
   "short_name": "Argu-führer",
-  "description": "Glossar von Fehlschlüssen und starken, nicht-zwingenden Argumentationsformen für die Beurteilung von Erörterungsaufsätzen.",
+  "description": "Glossar von 32 Fehlschlüssen und starken, nicht-zwingenden Argumentationsformen.",
   "id": "/feldfuehrer-argumentationsformen/",
   "start_url": "./index.html",
   "scope": "./",
