@@ -1,7 +1,7 @@
-// Feldführer Argumentationsformen — Offline-Cache
-// Versionsnummer beim nächsten Update erhöhen (z. B. "ffv2"), damit
+// Argumentationsführer — Offline-Cache
+// Versionsnummer bei jedem inhaltlichen Update erhöhen (z. B. "v3"), damit
 // installierte Geräte die neue Fassung laden statt der alten aus dem Cache.
-const CACHE_NAME = "feldfuehrer-v1";
+const CACHE_NAME = "argumentationsfuehrer-v2";
 const PRECACHE_URLS = [
   "./",
   "./index.html",
