@@ -1,7 +1,7 @@
 // Argumentationsführer — Offline-Cache
 // Versionsnummer bei jedem inhaltlichen Update erhöhen (z. B. "v3"), damit
 // installierte Geräte die neue Fassung laden statt der alten aus dem Cache.
-const CACHE_NAME = "argumentationsfuehrer-v4";
+const CACHE_NAME = "argumentationsfuehrer-v5";
 const PRECACHE_URLS = [
   "./",
   "./index.html",
