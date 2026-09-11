@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feldführer Argumentationsformen</title>
+<meta name="description" content="Glossar von Fehlschlüssen und starken, nicht-zwingenden Argumentationsformen für die Beurteilung von Erörterungsaufsätzen.">
+<meta name="theme-color" content="#3e5c43">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Feldführer">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icon-512.png">
+<style>
+  :root{
+    --paper:#ece7d8;
+    --surface:#f8f4e7;
+    --surface-2:#e2dabf;
+    --ink:#2a2820;
+    --ink-soft:#655e4c;
+    --line:#c6bc9c;
+    --accent:#3e5c43;
+    --accent-strong:#2c4530;
+    --accent-contrast:#f8f4e7;
+    --fam-relevance:#a04a30;
+    --fam-formal:#375a78;
+    --fam-causal:#7a4f82;
+    --fam-ambiguity:#93692b;
+    --fam-induction:#2e6e69;
+    --fam-positive:#a8506f;
+    --shadow: 0 1px 2px rgba(30,25,10,.06), 0 4px 14px rgba(30,25,10,.05);
+    --focus: #1c5fae;
+    --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --font-body: Georgia, 'Times New Roman', serif;
+    --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1a1914;
+      --surface:#221f18;
+      --surface-2:#2b2720;
+      --ink:#ece5cf;
+      --ink-soft:#b1a88e;
+      --line:#413b2c;
+      --accent:#86b28b;
+      --accent-strong:#a3cba7;
+      --accent-contrast:#16210f;
+      --fam-relevance:#d38063;
+      --fam-formal:#7ea7c9;
+      --fam-causal:#bb95c2;
+      --fam-ambiguity:#c9a35d;
+      --fam-induction:#6fb3ac;
+      --fam-positive:#e090ab;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.28);
+      --focus:#8fc4ff;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1a1914; --surface:#221f18; --surface-2:#2b2720; --ink:#ece5cf; --ink-soft:#b1a88e;
+    --line:#413b2c; --accent:#86b28b; --accent-strong:#a3cba7; --accent-contrast:#16210f;
+    --fam-relevance:#d38063; --fam-formal:#7ea7c9; --fam-causal:#bb95c2; --fam-ambiguity:#c9a35d;
+    --fam-induction:#6fb3ac; --fam-positive:#e090ab;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 18px rgba(0,0,0,.28); --focus:#8fc4ff;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--font-body); line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ margin:0; font-weight:700; }
+  ::selection{ background:var(--accent); color:var(--accent-contrast); }
+  :focus-visible{ outline:2px solid var(--focus); outline-offset:2px; }
+  button, input{ font:inherit; color:inherit; }
+  button{ cursor:pointer; }
+  @media (prefers-reduced-motion: reduce){ *{ animation-duration:.001ms !important; transition-duration:.001ms !important; } }
+
+  .shell{ display:grid; grid-template-columns:236px 1fr; min-height:100vh; }
+
+  .spine{
+    background:var(--surface); border-right:1px solid var(--line); padding:22px 18px 24px;
+    display:flex; flex-direction:column; gap:20px; position:sticky; top:0; height:100vh; overflow-y:auto;
+  }
+  .brand{ display:flex; align-items:flex-start; gap:10px; }
+  .brand-mark{
+    width:34px; height:34px; flex:none; border-radius:50%; border:1.5px solid var(--accent);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:.7rem; color:var(--accent-strong);
+  }
+  .brand-text{ font-family:var(--font-display); }
+  .brand-text .title{ font-size:1.05rem; font-weight:700; line-height:1.2; }
+  .brand-text .subtitle{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
+
+  .offline-badge{
+    font-family:var(--font-mono); font-size:.64rem; letter-spacing:.04em; color:var(--accent-strong);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:6px; padding:5px 8px; display:none;
+  }
+  .offline-badge.show{ display:block; }
+
+  .spine-panel{ border-top:1px solid var(--line); padding-top:16px; display:flex; flex-direction:column; gap:12px; }
+  .spine-panel h2{ font-family:var(--font-mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; }
+  .search{ width:100%; background:var(--paper); border:1px solid var(--line); border-radius:7px; padding:8px 10px; font-size:.88rem; }
+  .chips{ display:flex; flex-direction:column; gap:6px; }
+  .chip{ display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:7px; padding:6px 9px; background:var(--paper); font-size:.78rem; color:var(--ink-soft); }
+  .chip .dot{ width:8px; height:8px; border-radius:50%; flex:none; }
+  .chip.on{ border-color:var(--fam-color); color:var(--ink); background:color-mix(in srgb, var(--fam-color) 14%, var(--paper)); }
+  .chip .cnt{ margin-left:auto; font-family:var(--font-mono); font-size:.68rem; }
+  .count-line{ font-family:var(--font-mono); font-size:.7rem; color:var(--ink-soft); }
+  .reset-link{ background:none; border:none; padding:0; font-size:.78rem; color:var(--accent-strong); text-decoration:underline; text-underline-offset:2px; align-self:flex-start; }
+
+  .main{ padding:28px clamp(16px,4vw,40px) 48px; max-width:1180px; }
+  [hidden]{ display:none !important; }
+
+  .page-head{ display:flex; flex-direction:column; gap:6px; margin-bottom:22px; }
+  .eyebrow{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-strong); }
+  .page-head h1{ font-family:var(--font-display); font-size:1.7rem; }
+  .page-head p{ color:var(--ink-soft); font-size:.95rem; max-width:64ch; margin:0; }
+
+  .mobile-tools{ display:none; }
+
+  .glossary-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px; }
+  .card{ background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:16px 18px 18px; display:flex; flex-direction:column; gap:9px; box-shadow:var(--shadow); scroll-margin-top:24px; }
+  .card.flash{ outline:2px solid var(--accent); outline-offset:2px; }
+  .card-top{ display:flex; justify-content:space-between; align-items:center; gap:8px; }
+  .cat-no{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.05em; color:var(--ink-soft); }
+  .fam-tag{ font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.05em; padding:3px 8px; border-radius:999px; color:var(--accent-contrast); background:var(--fam-color); white-space:nowrap; }
+  .term{ font-family:var(--font-display); font-style:italic; font-size:1.2rem; font-weight:700; line-height:1.25; }
+  .sub{ font-size:.86rem; color:var(--ink-soft); margin-top:-4px; }
+  .mark{ font-size:.83rem; font-style:italic; color:var(--accent-strong); border-left:2px solid var(--fam-color); padding-left:9px; }
+  .def{ font-size:.92rem; line-height:1.5; }
+  .example{ background:var(--surface-2); border-radius:7px; padding:9px 11px; font-size:.85rem; font-style:italic; }
+  .example::before{ content:"„"; font-style:normal; }
+  .example::after{ content:"“"; font-style:normal; }
+  .related{ font-size:.76rem; color:var(--ink-soft); }
+  .related .inline-link{ background:none; border:none; padding:0; font:inherit; font-weight:700; color:var(--accent-strong); text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+  .empty-state{ color:var(--ink-soft); font-size:.9rem; padding:30px 4px; }
+
+  footer.hint{ margin-top:30px; font-size:.78rem; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:14px; }
+
+  @media (max-width:760px){
+    .shell{ grid-template-columns:1fr; }
+    .spine{ position:static; height:auto; border-right:none; border-bottom:1px solid var(--line); }
+    .spine-panel{ display:none; }
+    .mobile-tools{ display:flex; flex-direction:column; gap:10px; margin-bottom:6px; }
+    .mobile-tools .chips{ flex-direction:row; overflow-x:auto; padding-bottom:2px; }
+    .mobile-tools .chip{ flex:none; }
+    .main{ padding:20px 16px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="spine">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">FF</div>
+      <div class="brand-text">
+        <div class="title">Feldführer</div>
+        <div class="subtitle">Fehlschlüsse &amp; starke Argumente</div>
+      </div>
+    </div>
+
+    <div class="offline-badge" id="offline-badge">● Offline einsatzbereit</div>
+
+    <div class="spine-panel">
+      <h2>Suche &amp; Familien</h2>
+      <input class="search" id="search" type="search" placeholder="Suche, z. B. „Autorität“ …" aria-label="Glossar durchsuchen">
+      <div class="chips" id="chips"></div>
+      <div class="count-line" id="count-line">32 Einträge</div>
+      <button class="reset-link" id="reset-filters" type="button">Filter zurücksetzen</button>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="page-head">
+      <span class="eyebrow">Glossar</span>
+      <h1>Argumentationsformen für die Aufsatzbeurteilung</h1>
+      <p>32 Einträge, geordnet nach Familie: Fehlschlüsse mit Erkennungsmerkmal, Beispiel und Verwechslungsgefahr – sowie starke, nicht-zwingende Argumente, die ihnen zum Verwechseln ähnlich sehen können, es aber sauber gemacht richtig machen. Beispiele orientieren sich an gängigen Erörterungsthemen.</p>
+    </div>
+
+    <div class="mobile-tools">
+      <input class="search" id="search-m" type="search" placeholder="Suche, z. B. „Autorität“ …" aria-label="Glossar durchsuchen">
+      <div class="chips" id="chips-m"></div>
+    </div>
+
+    <div class="glossary-grid" id="grid"></div>
+
+    <footer class="hint">Einmal geladen, funktioniert dieser Feldführer vollständig ohne Internetverbindung.</footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var FAMILIES = {
+    relevance:  { label: "Relevanzfehler",        color: "var(--fam-relevance)", kind:"fallacy" },
+    formal:     { label: "Formale Fehlschlüsse",   color: "var(--fam-formal)",    kind:"fallacy" },
+    causal:     { label: "Kausale Fehlschlüsse",   color: "var(--fam-causal)",    kind:"fallacy" },
+    ambiguity:  { label: "Mehrdeutigkeit",         color: "var(--fam-ambiguity)", kind:"fallacy" },
+    induction:  { label: "Induktion & Beweislast", color: "var(--fam-induction)", kind:"fallacy" },
+    positive:   { label: "Starke Argumente",       color: "var(--fam-positive)",  kind:"positive" }
+  };
+
+  var FALLACIES = [
+    { id:"red-herring", no:1, family:"relevance", term:"Red Herring", sub:"Ablenkungsmanöver",
+      mark:"Führt vom Weg ab, bevor die eigentliche Frage beantwortet ist.",
+      def:"Ein sachfremder Punkt wird eingebracht, um die Aufmerksamkeit vom eigentlichen Streitpunkt wegzulenken.",
+      example:"Bevor wir über ein generelles Tempolimit diskutieren, sollten wir uns fragen, warum unsere Innenstädte überhaupt so verstopft sind.",
+      related:{id:"straw-man", note:"Beim Strohmann wird die Gegenposition verzerrt, beim Red Herring das Thema einfach gewechselt."} },
+    { id:"ad-hominem", no:2, family:"relevance", term:"Argumentum ad hominem", sub:"Persönlicher Angriff",
+      mark:"Greift die Person an, nicht die Behauptung.",
+      def:"Statt das Argument zu prüfen, wird die Glaubwürdigkeit, der Charakter oder die Motive der argumentierenden Person angegriffen.",
+      example:"Die Position der Abgeordneten zur Fristenregelung beim Schwangerschaftsabbruch kann man vernachlässigen, sie hat schliesslich selbst nie Kinder gehabt.",
+      related:{id:"genetic-fallacy", note:"Der genetische Fehlschluss greift die Herkunft einer Idee an, nicht die Person, die sie vertritt."} },
+    { id:"tu-quoque", no:3, family:"relevance", term:"Tu quoque", sub:"Du-auch-Fehlschluss / Whataboutism",
+      mark:"Wehrt Kritik ab, indem sie zurückgeworfen wird.",
+      def:"Ein Vorwurf wird für ungültig erklärt, weil die kritisierende Seite selbst inkonsequent gehandelt oder Ähnliches getan hat.",
+      example:"Deutschland wird kritisiert, weil es Waffen in Krisengebiete liefert – aber die Staaten, die das kritisieren, tun doch genau dasselbe.",
+      related:{id:"ad-hominem", note:"Tu quoque ist eine Sonderform des ad hominem, die gezielt auf Inkonsequenz zielt."} },
+    { id:"straw-man", no:4, family:"relevance", term:"Strohmann-Argument", sub:"Straw Man",
+      mark:"Bekämpft eine verzerrte Kopie der Gegenposition.",
+      def:"Die Position des Gegenübers wird vereinfacht, übertrieben oder entstellt wiedergegeben, um sie leichter widerlegen zu können.",
+      example:"Wer Tierversuche in der Medizin kritisch hinterfragt, will offenbar auf jeden medizinischen Fortschritt verzichten.",
+      related:{id:"false-dilemma", note:"Das falsche Dilemma verengt die Optionen, der Strohmann verzerrt eine einzelne Position."} },
+    { id:"ad-baculum", no:5, family:"relevance", term:"Argumentum ad baculum", sub:"Droh-Argument",
+      mark:"Ersetzt Gründe durch die Androhung von Konsequenzen.",
+      def:"Eine Position wird nicht mit Gründen, sondern mit der Androhung negativer Folgen gestützt.",
+      example:"Wer sich weiterhin gegen eine CO2-Steuer ausspricht, muss mit dem Verlust seines politischen Rückhalts rechnen.",
+      related:{id:"ad-populum", note:"Beim ad populum wirkt der Druck der Masse, beim ad baculum eine direkte Drohung."} },
+    { id:"ad-misericordiam", no:6, family:"relevance", term:"Argumentum ad misericordiam", sub:"Mitleids-Appell",
+      mark:"Appelliert ans Mitgefühl statt an Belege.",
+      def:"Zustimmung wird durch das Wecken von Mitleid statt durch sachliche Gründe erwirkt.",
+      example:"Bitte stimmt gegen die Wiedereinführung von Studiengebühren – viele Studierende haben ohnehin schon so wenig, das wäre einfach ungerecht.",
+      related:{id:"pos-value", note:"Das Wertargument benennt den moralischen Massstab offen, der Mitleids-Appell ersetzt ihn durch reine Gefühlsansprache."} },
+    { id:"ad-populum", no:7, family:"relevance", term:"Argumentum ad populum", sub:"Mehrheits-Appell (Bandwagon)",
+      mark:"Wahr, weil viele es glauben.",
+      def:"Eine Behauptung gilt als wahr oder richtig, weil sie von vielen Menschen geteilt wird.",
+      example:"Die überwiegende Mehrheit der Eltern ist für ein Handyverbot an Schulen – also muss es richtig sein.",
+      related:{id:"ad-verecundiam", note:"Beim ad verecundiam zählt die Autorität, beim ad populum die Menge der Zustimmenden."} },
+    { id:"petitio-principii", no:8, family:"formal", term:"Petitio principii", sub:"Zirkelschluss",
+      mark:"Die Schlussfolgerung steckt schon in der Prämisse.",
+      def:"Die zu beweisende Aussage wird, oft leicht umformuliert, bereits als Prämisse vorausgesetzt.",
+      example:"Aktive Sterbehilfe ist unmoralisch, weil es moralisch falsch ist, das Leben eines Menschen aktiv zu beenden.",
+      related:{id:"loaded-question", note:"Bei der Suggestivfrage steckt die unbewiesene Prämisse in einer Frage statt in einem Argument."} },
+    { id:"false-dilemma", no:9, family:"formal", term:"Falsches Dilemma", sub:"False Dichotomy",
+      mark:"Nur zwei Optionen, wo mehr existieren.",
+      def:"Eine Situation wird auf zwei, meist extreme, Alternativen reduziert, obwohl weitere Möglichkeiten bestehen.",
+      example:"Entweder steigen wir sofort wieder in die Atomkraft ein, oder wir bleiben komplett von russischem Gas abhängig.",
+      related:{id:"pos-dilemma", note:"Ein echtes Dilemma liegt nur vor, wenn wirklich keine dritte Option besteht – hier gibt es sie, etwa erneuerbare Energien."} },
+    { id:"slippery-slope", no:10, family:"formal", term:"Dammbruchargument", sub:"Slippery Slope",
+      mark:"Ein erster Schritt reisst angeblich die ganze Kette mit.",
+      def:"Es wird behauptet, ein erster Schritt führe unweigerlich über eine unbegründete Kette von Zwischenschritten zu einem extremen Ergebnis.",
+      example:"Legalisieren wir Cannabis, werden als Nächstes auch harte Drogen freigegeben, die Drogenkriminalität explodiert, und am Ende bricht die öffentliche Ordnung zusammen.",
+      related:{id:"pos-consequence", note:"Beim begründeten Folgenargument wird jeder Schritt der Kette einzeln belegt statt nur behauptet."} },
+    { id:"affirming-consequent", no:11, family:"formal", term:"Bejahung des Konsequens", sub:"Affirming the Consequent",
+      mark:"Aus B wird auf A geschlossen, weil A→B gilt und B eintrat.",
+      def:"Aus „Wenn A, dann B“ und „B ist wahr“ wird fälschlich geschlossen, dass A wahr sein muss.",
+      example:"Wenn der Klimawandel voranschreitet, nehmen Extremwetterereignisse zu. Dieses Jahr gab es besonders viele Extremwetterereignisse, also schreitet der Klimawandel voran.",
+      related:{id:"denying-antecedent", note:"Der spiegelbildliche Formfehler: dort wird aus der Verneinung von A auf die Verneinung von B geschlossen."} },
+    { id:"denying-antecedent", no:12, family:"formal", term:"Leugnung des Antecedens", sub:"Denying the Antecedent",
+      mark:"Ohne A also nicht B – obwohl B andere Ursachen haben kann.",
+      def:"Aus „Wenn A, dann B“ und „A ist falsch“ wird fälschlich geschlossen, dass B falsch sein muss.",
+      example:"Wenn die Wehrpflicht wieder eingeführt wird, steigt die Zahl ausgebildeter Reservisten. Die Wehrpflicht wird nicht wieder eingeführt, also steigt die Zahl ausgebildeter Reservisten nicht.",
+      related:{id:"affirming-consequent", note:"Der spiegelbildliche Formfehler zur Bejahung des Konsequens."} },
+    { id:"post-hoc", no:13, family:"causal", term:"Post hoc ergo propter hoc", sub:"Nach-Dies-Also-Deswegen",
+      mark:"Danach, also deswegen.",
+      def:"Weil B nach A eintrat, wird angenommen, A habe B verursacht – zeitliche Abfolge wird mit Kausalität verwechselt.",
+      example:"Seit die Stadt mehr Überwachungskameras installiert hat, ist die Kriminalität gesunken – die Kameras müssen also der Grund sein.",
+      related:{id:"cum-hoc", note:"Beim cum hoc reicht schon gemeinsames Auftreten, hier braucht es zusätzlich eine zeitliche Abfolge."} },
+    { id:"cum-hoc", no:14, family:"causal", term:"Cum hoc ergo propter hoc", sub:"Korrelation-Kausalitäts-Fehlschluss",
+      mark:"Zwei Dinge treten zusammen auf, also verursacht angeblich eines das andere.",
+      def:"Aus einer statistischen Korrelation zwischen zwei Grössen wird direkt auf Kausalität geschlossen, ohne Drittfaktoren auszuschliessen.",
+      example:"Länder mit hohem Fleischkonsum haben im Schnitt auch eine höhere Lebenserwartung – Fleisch essen verlängert also das Leben.",
+      related:{id:"pos-causal", note:"Das begründete Kausalargument schliesst Drittfaktoren wie Wohlstand aktiv aus, statt sie zu ignorieren."} },
+    { id:"genetic-fallacy", no:15, family:"causal", term:"Genetischer Fehlschluss", sub:"Genetic Fallacy",
+      mark:"Beurteilt die Sache nach ihrer Herkunft, nicht nach ihrem Gehalt.",
+      def:"Eine Aussage wird allein aufgrund ihres Ursprungs oder ihrer Entstehungsgeschichte akzeptiert oder verworfen.",
+      example:"Diese Studie zur Sicherheit von Genfood wurde von einem Agrarkonzern finanziert, also kann ihr Ergebnis nicht stimmen.",
+      related:{id:"ad-hominem", note:"Ad hominem greift die Person an, der genetische Fehlschluss die Herkunft der Idee selbst."} },
+    { id:"equivocation", no:16, family:"ambiguity", term:"Äquivokation", sub:"Equivocation",
+      mark:"Ein Wort wechselt mitten im Argument die Bedeutung.",
+      def:"Ein Begriff wird innerhalb eines Arguments in zwei verschiedenen Bedeutungen verwendet, wodurch der Schluss nur scheinbar gültig ist.",
+      example:"Der Staat soll die Freiheit seiner Bürgerinnen und Bürger achten. Der freie Markt bedeutet maximale wirtschaftliche Freiheit. Also muss der Staat den Markt vollständig unreguliert lassen.",
+      related:{id:"false-analogy", note:"Bei der falschen Analogie wird ein ganzes Bild überdehnt, bei der Äquivokation ein einzelnes Wort."} },
+    { id:"no-true-scotsman", no:17, family:"ambiguity", term:"No True Scotsman", sub:"Definitionsverschiebung",
+      mark:"Verschiebt die Definition, um ein Gegenbeispiel loszuwerden.",
+      def:"Ein Gegenbeispiel zu einer Verallgemeinerung wird nicht widerlegt, sondern per nachträglich verschärfter Definition als „kein echter Fall“ ausgeschlossen.",
+      example:"Kein wirklich umweltbewusster Mensch fliegt in den Urlaub. – Aber Frau Meier engagiert sich seit Jahren im Klimaschutz und fliegt trotzdem einmal jährlich in die Ferien. – Dann ist sie eben nicht wirklich umweltbewusst.",
+      related:{id:"pos-freak-case", note:"Beim Grenzfall-Argument wird ein Gegenbeispiel gerade ernst genommen, um die Regel zu prüfen, statt es wegzudefinieren."} },
+    { id:"false-analogy", no:18, family:"ambiguity", term:"Falsche Analogie", sub:"False Analogy",
+      mark:"Ähnlich in einem Punkt, angeblich also ähnlich in allen.",
+      def:"Aus einer partiellen Ähnlichkeit zwischen zwei Sachverhalten wird auf eine Ähnlichkeit geschlossen, die für das Argument gar nicht relevant ist.",
+      example:"Einen Staat zu führen ist wie einen Haushalt zu führen – man darf nie mehr ausgeben, als man einnimmt.",
+      related:{id:"pos-analogy", note:"Beim tragfähigen Analogieargument sind gerade die für die Frage relevanten Merkmale wirklich vergleichbar."} },
+    { id:"hasty-generalization", no:19, family:"induction", term:"Voreilige Verallgemeinerung", sub:"Hasty Generalization",
+      mark:"Von wenigen Fällen auf alle Fälle.",
+      def:"Aus einer zu kleinen oder unrepräsentativen Stichprobe wird eine allgemeine Regel abgeleitet.",
+      example:"Ich kenne zwei Berufseinsteiger aus der Generation Z, die im ersten Jahr gekündigt haben – diese Generation ist einfach nicht belastbar.",
+      related:{id:"pos-induction", note:"Der tragfähige Induktionsschluss stützt sich auf eine hinreichend grosse, repräsentative Zahl von Fällen."} },
+    { id:"ad-ignorantiam", no:20, family:"induction", term:"Argumentum ad ignorantiam", sub:"Unwissenheits-Appell",
+      mark:"Unbewiesen heisst falsch – oder unwiderlegt heisst wahr.",
+      def:"Eine Behauptung gilt als wahr, weil sie nicht widerlegt wurde – oder als falsch, weil sie nicht bewiesen wurde.",
+      example:"Niemand konnte bislang beweisen, dass der Impfstoff langfristige Nebenwirkungen hat – also ist er völlig unbedenklich.",
+      related:{id:"loaded-question", note:"Verwandte Umkehrung der Beweislast – dort steckt sie in einer Frage, hier in einer Behauptung."} },
+    { id:"ad-verecundiam", no:21, family:"induction", term:"Argumentum ad verecundiam", sub:"Autoritätsargument (fehlschlüssig)",
+      mark:"Wahr, weil eine Autorität es sagt – auch ausserhalb ihres Fachs.",
+      def:"Eine Behauptung wird akzeptiert, weil eine bekannte Person sie vertritt, unabhängig davon, ob diese in der Sache tatsächlich Expertise besitzt.",
+      example:"Ein bekannter Fussballprofi isst nur noch vegan und bewirbt einen pflanzlichen Proteinshake – also muss dieser gesund sein.",
+      related:{id:"pos-authority", note:"Das sachgemässe Autoritätsargument beruft sich auf tatsächliche Fachexpertise im relevanten Gebiet."} },
+    { id:"loaded-question", no:22, family:"induction", term:"Suggestivfrage", sub:"Loaded Question",
+      mark:"Jede Antwort bestätigt eine unbewiesene Unterstellung.",
+      def:"Eine Frage enthält bereits eine unbelegte Voraussetzung, sodass jede direkte Antwort diese Voraussetzung bestätigt.",
+      example:"Wie lange wollen Sie noch die Interessen der Autoindustrie über den Klimaschutz stellen?",
+      related:{id:"petitio-principii", note:"Beim Zirkelschluss steckt die unbewiesene Prämisse in einem Argument, hier in einer Frage."} },
+
+    { id:"pos-induction", no:23, family:"positive", term:"Induktionsschluss", sub:"Schluss vom Einzelfall auf die Regel",
+      mark:"Von wiederholt beobachteten Fällen auf eine Regel – nicht zwingend, aber empirisch tragfähig.",
+      def:"Aus einer hinreichend grossen und repräsentativen Zahl beobachteter Fälle wird auf eine allgemeine Regel geschlossen. Die Schlussfolgerung bleibt revidierbar, ist aber bei guter Stichprobe argumentativ stark.",
+      example:"In allen Ländern, die ein generelles Tempolimit eingeführt haben, sanken in den Folgejahren die Unfallzahlen mit schwerem Personenschaden – ein Tempolimit dürfte also auch hierzulande die Verkehrssicherheit erhöhen.",
+      related:{id:"hasty-generalization", note:"Wird zum Fehlschluss, sobald die Stichprobe zu klein oder unrepräsentativ ist."} },
+    { id:"pos-analogy", no:24, family:"positive", term:"Analogieargument", sub:"Begründete Ähnlichkeit",
+      mark:"Zwei Fälle sind sich gerade in den entscheidenden Punkten ähnlich.",
+      def:"Aus einer Ähnlichkeit zwischen zwei Sachverhalten in den für die Frage relevanten Merkmalen wird auf eine Ähnlichkeit der Bewertung geschlossen.",
+      example:"Alkohol ist eine legale Droge mit erheblichem Suchtpotenzial und wird staatlich reguliert statt verboten. Cannabis liesse sich in vergleichbarer Weise regulieren – das spricht eher für eine kontrollierte Legalisierung als für ein Verbot.",
+      related:{id:"false-analogy", note:"Wird zum Fehlschluss, wenn die Ähnlichkeit nur oberflächlich ist oder entscheidende Unterschiede ignoriert werden."} },
+    { id:"pos-authority", no:25, family:"positive", term:"Sachgemässes Autoritätsargument", sub:"Berufung auf echte Fachexpertise",
+      mark:"Die zitierte Autorität ist genau in diesem Fachgebiet ausgewiesen.",
+      def:"Eine Behauptung wird durch den Verweis auf eine Person oder Institution gestützt, die in der betreffenden Sache tatsächlich über einschlägige, nachprüfbare Fachkompetenz verfügt.",
+      example:"Der Weltklimarat IPCC bündelt die Einschätzung tausender Fachwissenschaftlerinnen und Fachwissenschaftler und kommt zum Schluss, der Klimawandel sei massgeblich menschengemacht – ein gewichtiger Grund, diese Einschätzung ernst zu nehmen.",
+      related:{id:"ad-verecundiam", note:"Wird zum Fehlschluss, sobald die Autorität ausserhalb ihres Fachgebiets spricht oder nur scheinbar kompetent ist."} },
+    { id:"pos-causal", no:26, family:"positive", term:"Begründetes Kausalargument", sub:"Empirisch abgesicherter Wirkungszusammenhang",
+      mark:"Der Wirkungszusammenhang ist unabhängig belegt, nicht nur zeitlich beobachtet.",
+      def:"Ein Ursache-Wirkungs-Zusammenhang wird durch kontrollierte Studien, einen erklärenden Mechanismus oder den Ausschluss naheliegender Drittfaktoren gestützt.",
+      example:"Langzeitstudien, die Rauchgewohnheiten getrennt von Ernährung und Bewegung erfassen, zeigen konsistent ein deutlich erhöhtes Lungenkrebsrisiko bei Raucherinnen und Rauchern – der Kausalzusammenhang gilt als gut abgesichert.",
+      related:{id:"cum-hoc", note:"Dort wird Kausalität allein aus einer Korrelation behauptet, ohne Drittfaktoren auszuschliessen."} },
+    { id:"pos-example", no:27, family:"positive", term:"Beispielargument (Exempel)", sub:"Illustrierender Einzelfall",
+      mark:"Ein einzelner, aber typischer Fall macht eine allgemeine These greifbar.",
+      def:"Ein konkreter Fall wird angeführt, um eine allgemeine Behauptung zu veranschaulichen oder plausibel zu machen – er beweist die Regel nicht, stützt sie aber, wenn er repräsentativ für die Fälle ist, die er illustrieren soll.",
+      example:"Im finnischen Grundeinkommens-Pilotversuch waren die Teilnehmenden weniger gestresst und fanden genauso oft eine Arbeit wie die Vergleichsgruppe – ein Hinweis darauf, dass ein Grundeinkommen die Erwerbsbereitschaft nicht zwangsläufig senkt.",
+      related:{id:"hasty-generalization", note:"Wird zum Fehlschluss, wenn aus dem Einzelfall eine allgemeine Regel behauptet statt nur plausibilisiert wird."} },
+    { id:"pos-freak-case", no:28, family:"positive", term:"Grenzfall-Argument (Freak Case)", sub:"Gegenbeispiel zur Prüfung einer Regel",
+      mark:"Ein extremer Fall testet, ob eine Regel wirklich ausnahmslos gilt.",
+      def:"Ein bewusst konstruierter oder realer Extremfall wird herangezogen, um zu prüfen, ob eine allgemeine Regel oder ein Prinzip auch an ihren Rändern noch trägt. Hält die Regel dem Grenzfall nicht stand, muss sie präzisiert oder eingeschränkt werden.",
+      example:"Wer sagt, Leben müsse unter allen Umständen um jeden Preis verlängert werden, muss sich fragen, ob das auch für einen unheilbar kranken Menschen mit unerträglichen Schmerzen gelten soll, der ausdrücklich sterben möchte – dieser Grenzfall zeigt, dass das Prinzip so pauschal kaum haltbar ist.",
+      related:{id:"no-true-scotsman", note:"Dort wird ein echtes Gegenbeispiel per Definition wegerklärt, statt es als Testfall ernst zu nehmen."} },
+    { id:"pos-value", no:29, family:"positive", term:"Normatives Argument (Wertargument)", sub:"Berufung auf einen anerkannten Wert",
+      mark:"Stützt sich offen auf einen Wert – und macht ihn dadurch diskutierbar.",
+      def:"Eine Position wird mit einem explizit genannten Wert oder Prinzip begründet, etwa Gerechtigkeit, Freiheit oder Menschenwürde. Anders als ein blosser Gefühlsappell macht das Wertargument seine normative Grundlage transparent und damit rational diskutierbar.",
+      example:"Eine einheitliche Schulkleidung verringert sichtbare Statusunterschiede zwischen Schülerinnen und Schülern und stärkt so das Prinzip der Chancengleichheit.",
+      related:{id:"ad-misericordiam", note:"Der Mitleids-Appell ersetzt die Begründung durch reine Gefühlsansprache, das Wertargument benennt den Massstab offen."} },
+    { id:"pos-consequence", no:30, family:"positive", term:"Begründetes Folgenargument", sub:"Abgesicherte Konsequenzenkette",
+      mark:"Jeder Schritt der Folgenkette ist einzeln plausibel gemacht.",
+      def:"Es wird auf wahrscheinliche Folgen einer Massnahme verwiesen – jeder Schritt der Kette wird dabei einzeln belegt oder plausibilisiert, statt nur behauptet zu werden.",
+      example:"Ein Tempolimit senkt nachweislich die Aufprallgeschwindigkeit bei Unfällen, eine geringere Aufprallgeschwindigkeit senkt nachweislich die Zahl der Todesopfer – ein Tempolimit dürfte also die Zahl der Verkehrstoten reduzieren.",
+      related:{id:"slippery-slope", note:"Beim Dammbruchargument bleibt die Kette der Zwischenschritte unbegründet und wird nur behauptet."} },
+    { id:"pos-abduction", no:31, family:"positive", term:"Schluss auf die beste Erklärung", sub:"Abduktion",
+      mark:"Wählt unter mehreren möglichen Erklärungen die, die die Fakten am besten erklärt.",
+      def:"Unter mehreren denkbaren Erklärungen für einen Sachverhalt wird diejenige als vorläufig plausibelste angenommen, die die vorliegenden Beobachtungen am einfachsten und vollständigsten erklärt.",
+      example:"Die Wahlbeteiligung junger Menschen ist dort am höchsten, wo Schulen politische Bildung und Debattierclubs fördern – die naheliegendste Erklärung ist, dass frühe politische Bildung das spätere Wahlverhalten positiv beeinflusst.",
+      related:{id:"cum-hoc", note:"Dort wird die erstbeste Kausalerklärung behauptet, ohne Alternativen abzuwägen; die Abduktion prüft bewusst mehrere Erklärungen."} },
+    { id:"pos-dilemma", no:32, family:"positive", term:"Echtes Dilemma", sub:"Tatsächlich erschöpfende Alternative",
+      mark:"Die zwei genannten Optionen sind wirklich die einzigen zur Wahl stehenden.",
+      def:"Eine Entscheidung wird auf zwei Optionen zugespitzt – zu Recht, weil in diesem konkreten Fall tatsächlich keine dritte Möglichkeit besteht.",
+      example:"Eine verspätet eingereichte Prüfungsarbeit wird gemäss Reglement entweder mit Notenabzug noch angenommen, oder sie gilt nach Ablauf der Kulanzfrist als nicht erbracht – eine dritte, regelkonforme Option sieht das Prüfungsreglement nicht vor.",
+      related:{id:"false-dilemma", note:"Dort werden tatsächlich vorhandene weitere Optionen unterschlagen."} }
+  ];
+
+  var byId = {};
+  FALLACIES.forEach(function(f){ byId[f.id] = f; });
+
+  var state = { query:"", families:new Set() };
+
+  function matches(f){
+    if (state.families.size && !state.families.has(f.family)) return false;
+    if (!state.query) return true;
+    var q = state.query;
+    return (f.term + " " + f.sub + " " + f.mark + " " + f.def).toLowerCase().indexOf(q) !== -1;
+  }
+
+  function relatedHTML(f){
+    if (!f.related) return '';
+    var target = byId[f.related.id];
+    if (!target) return '';
+    var label = FAMILIES[f.family].kind === 'positive' ? 'Abgrenzung zum Fehlschluss' : 'Verwechslungsgefahr';
+    return (
+      '<div class="related">' + label + ': ' +
+        '<button type="button" class="inline-link" data-goto="' + target.id + '">' + target.term + '</button>' +
+        ' — ' + f.related.note +
+      '</div>'
+    );
+  }
+
+  function cardHTML(f){
+    var fam = FAMILIES[f.family];
+    return (
+      '<article class="card" id="card-' + f.id + '" style="--fam-color:' + fam.color + '">' +
+        '<div class="card-top">' +
+          '<span class="cat-no">Nr. ' + String(f.no).padStart(2,'0') + '</span>' +
+          '<span class="fam-tag">' + fam.label + '</span>' +
+        '</div>' +
+        '<div class="term">' + f.term + '</div>' +
+        '<div class="sub">' + f.sub + '</div>' +
+        '<div class="mark">' + f.mark + '</div>' +
+        '<div class="def">' + f.def + '</div>' +
+        '<div class="example">' + f.example + '</div>' +
+        relatedHTML(f) +
+      '</article>'
+    );
+  }
+
+  function renderGrid(){
+    var grid = document.getElementById('grid');
+    var visible = FALLACIES.filter(matches);
+    grid.innerHTML = visible.length
+      ? visible.map(cardHTML).join('')
+      : '<p class="empty-state">Keine Einträge gefunden. Suche oder Filter anpassen.</p>';
+    var countLine = document.getElementById('count-line');
+    countLine.textContent = visible.length === FALLACIES.length
+      ? (FALLACIES.length + ' Einträge')
+      : (visible.length + ' von ' + FALLACIES.length + ' Einträgen');
+  }
+
+  function chipHTML(key){
+    var fam = FAMILIES[key];
+    var n = FALLACIES.filter(function(f){ return f.family === key; }).length;
+    return (
+      '<button type="button" class="chip" data-fam="' + key + '" style="--fam-color:' + fam.color + '">' +
+        '<span class="dot" style="background:' + fam.color + '"></span>' +
+        fam.label + '<span class="cnt">' + n + '</span>' +
+      '</button>'
+    );
+  }
+
+  function renderChips(){
+    var html = Object.keys(FAMILIES).map(chipHTML).join('');
+    ['chips','chips-m'].forEach(function(id){ document.getElementById(id).innerHTML = html; });
+    syncChipState();
+  }
+
+  function syncChipState(){
+    document.querySelectorAll('.chip').forEach(function(el){
+      el.classList.toggle('on', state.families.has(el.getAttribute('data-fam')));
+    });
+  }
+
+  function toggleFamily(key){
+    if (state.families.has(key)) state.families.delete(key); else state.families.add(key);
+    syncChipState();
+    renderGrid();
+  }
+
+  document.addEventListener('click', function(e){
+    var chip = e.target.closest('.chip');
+    if (chip) { toggleFamily(chip.getAttribute('data-fam')); return; }
+    var link = e.target.closest('.inline-link');
+    if (link) showEntry(link.getAttribute('data-goto'));
+  });
+
+  ['search','search-m'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(e){
+      state.query = e.target.value.trim().toLowerCase();
+      var other = id === 'search' ? 'search-m' : 'search';
+      document.getElementById(other).value = e.target.value;
+      renderGrid();
+    });
+  });
+
+  document.getElementById('reset-filters').addEventListener('click', function(){
+    state.query = ""; state.families.clear();
+    document.getElementById('search').value = "";
+    document.getElementById('search-m').value = "";
+    syncChipState();
+    renderGrid();
+  });
+
+  function showEntry(id){
+    state.query = ""; state.families.clear();
+    document.getElementById('search').value = "";
+    document.getElementById('search-m').value = "";
+    syncChipState();
+    renderGrid();
+    requestAnimationFrame(function(){
+      var el = document.getElementById('card-' + id);
+      if (!el) return;
+      el.scrollIntoView({ behavior:'smooth', block:'center' });
+      el.classList.add('flash');
+      setTimeout(function(){ el.classList.remove('flash'); }, 1600);
+    });
+  }
+
+  renderChips();
+  renderGrid();
+
+  // Offline-Fähigkeit: Service Worker registrieren, sobald verfügbar.
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function(){
+      navigator.serviceWorker.register("sw.js").catch(function(){ /* ohne SW funktioniert die Seite trotzdem */ });
+    });
+  }
+  function updateOnlineBadge(){
+    document.getElementById('offline-badge').classList.toggle('show', !navigator.onLine);
+  }
+  window.addEventListener('online', updateOnlineBadge);
+  window.addEventListener('offline', updateOnlineBadge);
+  updateOnlineBadge();
+
+})();
+</script>
+</body>
+</html>
